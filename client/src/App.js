@@ -3,6 +3,7 @@ import Topbar from './components/Topbar/Topbar';
 import CardNavegation from './components/CardNavegation/CardNavegation';
 import React from 'react';
 import FlashCard from './components/FlashCard/FlashCard';
+import Button from './components/Button/Button';
 
 function App() {
   return (
@@ -10,7 +11,14 @@ function App() {
       <Topbar/>
       <div className='container'>
         <CardNavegation/>
-        <FlashCard/>
+        <div className='card-container'>
+          <FlashCard/>
+          <div className='card-controls'>
+            <Button/>
+            <Button/>
+            <Button/>
+          </div>
+        </div>
       </div>
     </React.Fragment>
   );
