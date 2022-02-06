@@ -14,9 +14,9 @@ function App() {
         <div className='card-container'>
           <FlashCard/>
           <div className='card-controls'>
-            <Button/>
-            <Button/>
-            <Button/>
+            <Button>Back</Button>
+            <Button>Flip</Button>
+            <Button>Next</Button>
           </div>
         </div>
       </div>

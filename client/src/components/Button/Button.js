@@ -2,9 +2,9 @@ import React from 'react'
 import Topbar from '../Topbar/Topbar'
 import './Button.css'
 
-function Button(){
+function Button(props){
     return (
-        <button>Back</button>
+        <button className='button'>{props.children}</button>
     ) 
 }
 export default Button
