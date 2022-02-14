@@ -1,0 +1,12 @@
+.card-nav{
+    width: 10vw;
+    height: 200px;
+    background-color: cadetblue;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.card-nav li{
+    list-style-type: none;
+    color: white; 
+}

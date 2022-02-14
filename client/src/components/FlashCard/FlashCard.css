@@ -1,0 +1,16 @@
+.card{
+    width: 40vw;
+    height: 300px;
+    margin-top: 50px;
+    background-color: cadetblue;
+    display: flex;
+}
+.card img{
+    margin: 10px;
+    width: 200px;
+    height: 200px;
+}
+.card p{
+    color: white;
+    margin: 10px;
+}
