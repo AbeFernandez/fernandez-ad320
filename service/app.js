@@ -31,9 +31,29 @@ app.get('/', (req, res) => {
 })
 
 app.get('/decks/:id/cards', async (req, res) => {
-    console.log('request id', req.params.id)
-    const deck = await Deck.findById()
-    console.log(deck.cards.length)
+    const limit = req.query.limit
+    const deck = await Deck.findById(req.params.id)
+    if (deck) {
+        res.send(deck.cards.slice(0, 5))
+    } else {
+        res.sendStatus(404)
+    }
+})
+
+app.post('/cards', async (req, res) => {
+    const cardRequest = req.body  
+    console.log('request body ', cardRequest)
+    if (cardRequest.deckId) {
+        const deck = await Deck.findById(cardRequest.deckId)
+        if (deck) {
+            deck.cards.push({
+                frontImage: cardRequest.frontImage,
+                frontText: cardRequest.frontText,
+                backImage: cardRequest.backImage,
+                backText: cardRequest.backText
+            })
+        }
+    }
     res.sendStatus(503)
 })
 
