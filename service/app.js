@@ -30,6 +30,30 @@ app.get('/', (req, res) => {
     res.send('Hello, world!')
 })
 
+//Get an individual card by id
+
+app.get('/cards/:id', async (req, res) => {
+    const card = await Deck.findById(req.params.id)
+    if (card) {
+        res.send(card)
+    } else {
+        res.sendStatus(404)
+    }
+})
+
+//Get a deck by id
+
+app.get('/decks/:id/cards', async (req, res) => {
+    const deck = await Deck.findById(req.params.id)
+    if (deck) {
+        res.status(200).send(deck)
+    } else {
+        res.sendStatus(404)
+    }
+})
+
+// Get All cards from a deck id
+
 app.get('/decks/:id/cards', async (req, res) => {
     const limit = req.query.limit
     const deck = await Deck.findById(req.params.id)
@@ -52,10 +76,12 @@ app.post('/cards', async (req, res) => {
                 backImage: cardRequest.backImage,
                 backText: cardRequest.backText
             })
+            deck.save()
         }
     }
     res.sendStatus(503)
 })
+
 
 
 app.listen(port, () => {
