@@ -33,9 +33,9 @@ app.get('/', (req, res) => {
 //Get an individual card by id
 
 app.get('/cards/:id', async (req, res) => {
-    const card = await Deck.findById(req.params.id)
+    const card = await Deck.findOne({'card_id': req.params.id})
     if (card) {
-        res.send(card)
+        res.status(200).send(card)
     } else {
         res.sendStatus(404)
     }
@@ -43,8 +43,8 @@ app.get('/cards/:id', async (req, res) => {
 
 //Get a deck by id
 
-app.get('/decks/:id/cards', async (req, res) => {
-    const deck = await Deck.findById(req.params.id)
+app.get('/decks/:id', async (req, res) => {
+    const deck = await Deck.findOne({'_id': req.params.id})
     if (deck) {
         res.status(200).send(deck)
     } else {
