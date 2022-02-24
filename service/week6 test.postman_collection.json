@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "d1be5a30-d52d-4842-98f5-3e4e59d4b80c",
+		"name": "week6 test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "cardById",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\": \"Todo Four\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/cards/620efe5b1ea2d789dffc556a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"cards",
+						"620efe5b1ea2d789dffc556a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cardsByDeckId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/decks/620efe5a1ea2d789dffc5545/cards",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"decks",
+						"620efe5a1ea2d789dffc5545",
+						"cards"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getDeckByDeckId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/decks/620efe5a1ea2d789dffc5545",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"decks",
+						"620efe5a1ea2d789dffc5545"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
