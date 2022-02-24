@@ -64,6 +64,8 @@ app.get('/decks/:id/cards', async (req, res) => {
     }
 })
 
+//create a card
+
 app.post('/cards', async (req, res) => {
     const cardRequest = req.body  
     console.log('request body ', cardRequest)
